@@ -6,7 +6,7 @@
         <table style="width:30vw; border: 1px black solid">
             <tr>
                 <th>User</th>
-                <th>Times user spok</th>
+                <th>Times user spoken</th>
             </tr>
             <% @numberUserSpeak.each do |key,value| %>
                 <tr>
@@ -52,9 +52,9 @@
             </tr>
             <% @audios.each do |as| %>
             <tr>
-                <td><%= as.user.name %><td>
-                <td><%= as.audioStart.strftime("%H:%M:%S") %><td>
-                <td><%= as.audioEnd.strftime("%H:%M:%S") %><td>
+                <td><%= as.user.name %></td>
+                <td><%= as.audioStart.strftime("%H:%M:%S") %></td>
+                <td><%= as.audioEnd.strftime("%H:%M:%S") %></td>
             </tr>
             <% end %>
         </table>
