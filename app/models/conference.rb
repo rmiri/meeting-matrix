@@ -4,10 +4,13 @@ class Conference < ApplicationRecord
     has_many :users
     has_many :users, through: :audio_segment, source: :audio_segment_table_foreign_key_to_users_table
 
+    # I had some issues with the relationship in my db, I wasn't able to access users from a conference, so I decided to write my own method.
     def allUsers
        self.audio_segments.map{|as| as.user} 
     end
 
+
+    # to return only one instance of each user, so I can use in the other methods
     def userUnique
         self.allUsers.uniq
     end

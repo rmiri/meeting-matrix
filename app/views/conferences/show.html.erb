@@ -1,11 +1,12 @@
+<header><%= link_to "Home", "/" %></header>
 <div>
     <h2><%= @conference.name %> </h2>
     
-    <h3>Times each user speaks</h3>
+    <h3>How many times a user has spoken</h3>
         <table style="width:30vw; border: 1px black solid">
             <tr>
                 <th>User</th>
-                <th>Times user speak</th>
+                <th>Times user spok</th>
             </tr>
             <% @numberUserSpeak.each do |key,value| %>
                 <tr>
@@ -29,7 +30,7 @@
             <% end %>
         </table>
 
-    <h3>Who talks the most?</h3>
+    <h3>Biggest and least contributor</h3>
         <table style="width:30vw; border: 1px black solid">
             <tr>
                 <td>The most talkative</td>

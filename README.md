@@ -1,25 +1,28 @@
 # Meeting Matrix
 
-
-
 * Ruby version
 
 ``` ruby '2.7.0' ```
 
-* System dependencies
-
 * Configuration
 
-* Database creation
+``` bundle install ```
+
+* Database 
+
+ I used postgres as I wanted to host the app on Heroku
+
+ to set up make that postgres is runing on your machine
+
+To create the data base:
+ ``` rails db:create ```
+
+To create the tables:
+``` rails db:migrate ```
+
+To add content to the tables:
+``` rails db:seed ```
 
 
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
