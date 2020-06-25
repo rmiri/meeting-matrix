@@ -44,4 +44,7 @@ class Conference < ApplicationRecord
         self.hashAverageUser.min_by{|key,value| value} 
     end
 
+    # Filter
+
+
 end
