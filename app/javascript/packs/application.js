@@ -15,3 +15,12 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// Chart:
+
+require("chartkick")
+require("chart.js")
+
+
+
+import './filter'

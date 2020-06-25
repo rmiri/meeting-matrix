@@ -1,14 +1,14 @@
 # Meeting Matrix
 
-* Ruby version
+## Ruby version
 
 ``` ruby '2.7.0' ```
 
-* Configuration
+## Configuration
 
 ``` bundle install ```
 
-* Database 
+## Database 
 
  I used postgres as I wanted to host the app on Heroku
 

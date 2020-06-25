@@ -1,12 +1,11 @@
 <header><%= link_to "Home", "/" %></header>
 <div>
     <h2><%= @conference.name %> </h2>
-    
     <h3>How many times a user has spoken</h3>
         <table style="width:30vw; border: 1px black solid">
             <tr>
                 <th>User</th>
-                <th>Times user spok</th>
+                <th>Times user spoken</th>
             </tr>
             <% @numberUserSpeak.each do |key,value| %>
                 <tr>
@@ -15,6 +14,9 @@
                 </tr>
             <% end %>
         </table>
+        <%# <div style="width:30vw"> %>
+            <%= pie_chart @numberUserSpeak, width: "33vw", height: "250px" %>
+        <%# </div> %>
 
     <h3>Average Time</h3>
         <table style="width:30vw; border: 1px black solid">
