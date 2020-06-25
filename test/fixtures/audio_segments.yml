@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  conference: one
+  audioStart: 2020-06-24 22:32:39
+  audioEnd: 2020-06-24 22:32:39
+
+two:
+  user: two
+  conference: two
+  audioStart: 2020-06-24 22:32:39
+  audioEnd: 2020-06-24 22:32:39
