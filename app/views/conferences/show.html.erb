@@ -1,39 +1,48 @@
-<header><%= link_to "Home", "/" %></header>
-<div>
+
+<div class="container">
     <h2><%= @conference.name %> </h2>
-    <h3>How many times a user has spoken</h3>
-        <table style="width:30vw; border: 1px black solid">
-            <tr>
-                <th>User</th>
-                <th>Times user spoken</th>
-            </tr>
-            <% @numberUserSpeak.each do |key,value| %>
-                <tr>
-                <td><%= key.to_s %></td>
-                <td><%= value.to_s %></td>
-                </tr>
-            <% end %>
-        </table>
-        <%# <div style="width:30vw"> %>
+    <div class="row">
+        <div class="col">
+            <h3>How many times a user has spoken</h3>
+                <table class="table">
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Times user spoken</th>
+                    </tr>
+                    <% @numberUserSpeak.each do |key,value| %>
+                        <tr>
+                        <td><%= key.to_s %></td>
+                        <td><%= value.to_s %></td>
+                        </tr>
+                    <% end %>
+                </table>
+        </div>
+        <div class="col">
             <%= pie_chart @numberUserSpeak, width: "33vw", height: "250px" %>
-        <%# </div> %>
-
-    <h3>Average Time</h3>
-        <table style="width:30vw; border: 1px black solid">
-            <tr>
-                <th>User</th>
-                <th>Average time user speak</th>
-            </tr>
-            <% @averageUserSpeak.each do |key,value| %>
-                <tr>
-                <td><%= key.to_s %></td>
-                <td><%= value.to_s %>s</td>
-                </tr>
-            <% end %>
-        </table>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Average Time</h3>
+                <table class="table ">
+                    <tr>
+                        <th>User</th>
+                        <th>Average time user speak</th>
+                    </tr>
+                    <% @averageUserSpeak.each do |key,value| %>
+                        <tr>
+                        <td><%= key.to_s %></td>
+                        <td><%= value.to_s %>s</td>
+                        </tr>
+                    <% end %>
+                </table>
+        </div>
+        <div class="col">
+            <%= pie_chart @averageUserSpeak, width: "33vw", height: "250px" %>
+        </div>
+    </div>
     <h3>Biggest and least contributor</h3>
-        <table style="width:30vw; border: 1px black solid">
+        <table class="table">
             <tr>
                 <td>The most talkative</td>
                 <td><%= @biggestContributor[0] %></td>
@@ -46,17 +55,19 @@
         </table>
 
     <h3> Conference call participant audio segments </h3>
-        <table style="width:30vw; border: 1px black solid">
+        <table class="table table-bordered">
+         <thead class="thead-dark">
             <tr>
-                <th>User</th>
-                <th>Audio start</th>
-                <th>Audio End</th>
+                <th scope="col">User</th>
+                <th scope="col">Audio start</th>
+                <th scope="col">Audio End</th>
             </tr>
+        </thead>
             <% @audios.each do |as| %>
             <tr>
-                <td><%= as.user.name %><td>
-                <td><%= as.audioStart.strftime("%H:%M:%S") %><td>
-                <td><%= as.audioEnd.strftime("%H:%M:%S") %><td>
+                <td><%= as.user.name %></td>
+                <td><%= as.audioStart.strftime("%H:%M:%S") %></td>
+                <td><%= as.audioEnd.strftime("%H:%M:%S") %></td>
             </tr>
             <% end %>
         </table>
