@@ -1,0 +1,60 @@
+<div>
+    <h2><%= @conference.name %> </h2>
+    
+    <h3>Times each user speaks</h3>
+        <table style="width:30vw; border: 1px black solid">
+            <tr>
+                <th>User</th>
+                <th>Times user speak</th>
+            </tr>
+            <% @numberUserSpeak.each do |key,value| %>
+                <tr>
+                <td><%= key.to_s %></td>
+                <td><%= value.to_s %></td>
+                </tr>
+            <% end %>
+        </table>
+
+    <h3>Average Time</h3>
+        <table style="width:30vw; border: 1px black solid">
+            <tr>
+                <th>User</th>
+                <th>Average time user speak</th>
+            </tr>
+            <% @averageUserSpeak.each do |key,value| %>
+                <tr>
+                <td><%= key.to_s %></td>
+                <td><%= value.to_s %>s</td>
+                </tr>
+            <% end %>
+        </table>
+
+    <h3>Who talks the most?</h3>
+        <table style="width:30vw; border: 1px black solid">
+            <tr>
+                <td>The most talkative</td>
+                <td><%= @biggestContributor[0] %></td>
+            </tr>
+            <tr>
+                <td>The least talkative</td>
+                <td><%= @leastContributor[0] %></td>
+            </tr>
+
+        </table>
+
+    <h3> Conference call participant audio segments </h3>
+        <table style="width:30vw; border: 1px black solid">
+            <tr>
+                <th>User</th>
+                <th>Audio start</th>
+                <th>Audio End</th>
+            </tr>
+            <% @audios.each do |as| %>
+            <tr>
+                <td><%= as.user.name %><td>
+                <td><%= as.audioStart.strftime("%H:%M:%S") %><td>
+                <td><%= as.audioEnd.strftime("%H:%M:%S") %><td>
+            </tr>
+            <% end %>
+        </table>
+</div>

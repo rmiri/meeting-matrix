@@ -1,16 +1,12 @@
 class User < ApplicationRecord
-    has_many :audio_segments 
-    has_many :conferences, through: :audio_segment
+    has_many :audio_segments
+    # has_many :conferences, through: :audio_segment
     has_many :conferences
+    has_many :conferences, through: :audio_segment, source: :audio_segment_table_foreign_key_to_conferences_table
 
     # Create business logic that calculates how many times a participant speaks during a call
     def totalNumberUserSpeak
         self.audio_segments.length
-    end
-
-    # not asked, but I thought it was going to be a good add on 
-    def conferceTimesUserSpeak(confer)
-        self.audio_segments.select{|e| e.conference === confer }
     end
 
     # Total amount of time the user spoke
@@ -22,7 +18,10 @@ class User < ApplicationRecord
 
     # Create business logic that calculates the average duration of each participant's contribution
     def averageTimeSpeaking
-        self.totalTimeSpeaking / self.totalNumberUserSpeak
+        total = self.totalTimeSpeaking / self.totalNumberUserSpeak
+        total.round()
+
+        # should add logic if time is creater than 1 min
     end
 
 

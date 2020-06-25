@@ -1,0 +1,10 @@
+<div>
+  <h1>Conferences</h1> 
+  <% @conferences.each do |conference| %>
+  <ul>
+    <li>
+        <a href="/conferences/<%= conference.id %>"><%= conference.name %></a>
+    </li>
+  </ul> 
+  <% end %>
+</div>
