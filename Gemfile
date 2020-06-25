@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adds charts
 gem "chartkick"
+
+#  Filter
+gem 'pg_search'

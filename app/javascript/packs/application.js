@@ -21,8 +21,5 @@ require("channels")
 require("chartkick")
 require("chart.js")
 
-
-
-import './filter'
 import '../stylesheets/application'
 import './bootstrap_custom.js'
