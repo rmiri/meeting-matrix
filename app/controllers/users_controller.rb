@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-    def def index
-        @user = User.all
+    def index
+        @users = User.all
     end
     def show
         @user = User.find(params[:id])
+        @conferences = @user.conferenceUnique
     end
       
 end

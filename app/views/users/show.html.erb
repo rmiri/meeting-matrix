@@ -1,0 +1,9 @@
+<div class="container">
+    <h2><%= @user.name%></h2>
+    <h3>Conferences</h3>
+    <ul>
+        <% @conferences.each do |conf|%>
+            <li><a href='/conferences/<%= conf.id %>'><%= conf.name%></a></li>
+        <% end %>
+    <ul>
+</div>
